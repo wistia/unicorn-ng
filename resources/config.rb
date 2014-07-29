@@ -41,3 +41,8 @@ attribute :mode,              kind_of: String,  default: node['unicorn-ng']['con
 attribute :cookbook,          kind_of: String,  default: node['unicorn-ng']['config']['cookbook']
 attribute :source,            kind_of: String,  default: node['unicorn-ng']['config']['source']
 attribute :variables,         kind_of: Hash,    default: node['unicorn-ng']['config']['variables']
+
+def initialize(*args)
+  super
+  @action = :create
+end
